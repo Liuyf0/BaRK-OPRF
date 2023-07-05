@@ -1,0 +1,9 @@
+cat "downloading Miracl"
+echo "building Mircal"
+export ROOT=$(pwd) # save build root directory
+cd miracl/miracl/source/
+bash linux64
+cd $ROOT # cd back to previous directory
+cd miracl/miracl_osmt/source/ # there was a typo in path "miracl_ostm", but the path is "miracl_osmt"
+bash linux64_cpp # there is only linux64_app under the directoy
+
