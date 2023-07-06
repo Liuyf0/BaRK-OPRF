@@ -96,9 +96,6 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 {
 	u64 numThreads = 1;
 
-	std::fstream total;
-	total.open("output.txt", total.trunc | total.out);
-
 	std::string name("psi");
 
 	BtIOService ios(0);
@@ -153,6 +150,14 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 	std::cout << recverSize << " vs " << senderSize << "-- Online Avg Time: " << onlineTimeTot << " ms " << "\n";
 	std::cout << recverSize << " vs " << senderSize << "-- Offline Avg Time: " << offlineTimeTot << " ms " << "\n";
 	std::cout << recverSize << " vs " << senderSize << "-- Total Avg Time: " << (offlineTimeTot + onlineTimeTot) << " ms " << "\n";
+
+	std::string outpath = "./output.txt";
+    std::ofstream outputFile(outpath, std::ios::app);
+    outputFile << "Online Avg Time: " << onlineTimeTot << " ms " << std::endl;
+    outputFile << "Offline Avg Time: "<< offlineTimeTot << " ms " << std::endl;
+	outputFile << "Total Avg Time: "<< (offlineTimeTot + onlineTimeTot) << " ms " << std::endl;
+	outputFile << "----------------------------------------" << std::endl;
+    outputFile.close();
 
 	for (u64 i = 0; i < numThreads; ++i)
 	{

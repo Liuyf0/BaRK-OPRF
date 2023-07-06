@@ -1,0 +1,24 @@
+Online Avg Time: 11674 ms 
+Offline Avg Time: 480 ms 
+Total Avg Time: 12154 ms 
+----------------------------------------
+Online Avg Time: 11813 ms 
+Offline Avg Time: 543 ms 
+Total Avg Time: 12356 ms 
+----------------------------------------
+Online Avg Time: 10774 ms 
+Offline Avg Time: 503 ms 
+Total Avg Time: 11277 ms 
+----------------------------------------
+Online Avg Time: 11051 ms 
+Offline Avg Time: 503 ms 
+Total Avg Time: 11554 ms 
+----------------------------------------
+Online Avg Time: 1571 ms 
+Offline Avg Time: 496 ms 
+Total Avg Time: 2067 ms 
+----------------------------------------
+Online Avg Time: 57148 ms 
+Offline Avg Time: 2849 ms 
+Total Avg Time: 59997 ms 
+----------------------------------------
