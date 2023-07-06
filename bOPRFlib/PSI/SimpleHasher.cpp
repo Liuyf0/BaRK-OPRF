@@ -63,7 +63,6 @@ namespace bOPRF
 	u64 SimpleHasher::insertItems(std::array<std::vector<block>, 4> hashs)
 	{
 
-
 		u64 cnt=0;
 		u8 xrHash[SHA1::HashSize];
 
@@ -75,7 +74,6 @@ namespace bOPRF
 			std::array<u64, 3> idxs{ -1,-1,-1 };
 
 			for (u64 j = 0; j < 3; ++j) {
-
 				u64 xrHashVal = *(u64*)&hashs[j][i] % mBinCount;
 
 				addr = xrHashVal % mBinCount;

@@ -17,7 +17,7 @@ namespace bOPRF
 		~BopPsiReceiver();
 
 		u64 mRecverSize,mSenderSize,mStatSecParam;
-		std::vector<u64> mIntersection;
+		std::vector<std::vector<u64>> mIntersection;
 		CuckooHasher mBins;
 
 		block mHashingSeed;
@@ -28,8 +28,8 @@ namespace bOPRF
 
 		void init(u64 senderSize, u64 recverSize, u64 statSecParam, Channel& chl0, SSOtExtReceiver& otRecv,  block seed);
 		void init(u64 senderSize, u64 recverSize, u64 statSecParam, const std::vector<Channel*>& chls, SSOtExtReceiver& otRecv,  block seed);
-		void sendInput(std::vector<block>& inputs, Channel& chl);
-		void sendInput(std::vector<block>& inputs, const std::vector<Channel*>& chls);
+		void sendInput(std::vector<block>& inputs, Channel& chl, int senderSize);
+		void sendInput(std::vector<block>& inputs, const std::vector<Channel*>& chls, int senderSize);
 
 	};
 

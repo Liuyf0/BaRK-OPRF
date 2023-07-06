@@ -36,13 +36,11 @@ namespace bOPRF
 	{
 		// round up
 		u64 numOTExt =  ((input_size + 127) / 128) * 128;
-
 		// we are going to process SSOTs in blocks of 128 messages.
 		u64 numBlocks = numOTExt / BASE_OT_COUNT;
 
 		u64 doneIdx = 0;
-		std::array<std::array<block, BASE_OT_COUNT>, 4> q;	
-
+		std::array<std::array<block, BASE_OT_COUNT>, 4> q;
 #ifdef OTEXT_DEBUG
 		block* delta = (block*)mBaseChoiceBits.data();
 		ByteStream buff;
@@ -64,7 +62,6 @@ namespace bOPRF
 					q[ssotBlkColIdx][colIdx] = mGens[ssotBlkColIdx][colIdx].get_block();
 
 				}
-
 				sse_transpose128(q[ssotBlkColIdx]);
 			}		
 
@@ -77,7 +74,7 @@ namespace bOPRF
 				{
 					recvMsg[doneIdx].elem[ssotBlkColIdx] = q[ssotBlkColIdx][blkRowIdx];
 				}
-		}	
+			}	
 		}
 
 #ifdef OTEXT_DEBUG
@@ -98,8 +95,5 @@ namespace bOPRF
 		Log::out << Log::unlock;
 #endif
 		
-	
 	}
-
-
 }

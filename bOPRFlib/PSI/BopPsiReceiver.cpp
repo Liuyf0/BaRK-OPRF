@@ -97,9 +97,9 @@ namespace bOPRF
 		//	Log::out << gTimer;
 	}
 
-	void BopPsiReceiver::sendInput(std::vector<block>& inputs, Channel & chl)
+	void BopPsiReceiver::sendInput(std::vector<block>& inputs, Channel & chl, int senderSize)
 	{
-		sendInput(inputs, { &chl });
+		sendInput(inputs, { &chl }, senderSize);
 	}
 
 	struct has_const_member
@@ -112,17 +112,8 @@ namespace bOPRF
 
 	};
 
-	void BopPsiReceiver::sendInput(std::vector<block>& inputs, const std::vector<Channel*>& chls)
+	void BopPsiReceiver::sendInput(std::vector<block>& inputs, const std::vector<Channel*>& chls, int senderes)
 	{
-
-
-
-
-		//const bool leq1 = true;
-		//define keysearch of mask based on mask length
-//		typedef std::conditional<leq1, u32, u64>::type uMask;
-
-		// check that the number of inputs is as expected.
 		if (inputs.size() != mRecverSize)
 			throw std::runtime_error("inputs.size() != mN");
 		gTimer.setTimePoint("R Online.Start");
@@ -246,56 +237,58 @@ namespace bOPRF
 		gTimer.setTimePoint("R Online.sendBucketMask done");
 
 		//receive the sender's marks, we have 3 buffs that corresponding to the mask of elements used hash index 0,1,2
-		for (u64 buffIdx = 0; buffIdx < 3; buffIdx++)
+		for (int k = 0; k < senderes; ++k)
 		{
-			ByteStream recvBuff;
-			chl.recv(recvBuff);
-
-			// double check the size. 
-			if (recvBuff.size() != mSenderSize* maskSize)
+			for (u64 buffIdx = 0; buffIdx < 3; buffIdx++)
 			{
-				Log::out << "recvBuff.size() != expectedSize" << Log::endl;
-				throw std::runtime_error("rt error at " LOCATION);
-			}
-
-			auto theirMasks = recvBuff.data();
-
-			//loop each mask
-			if (maskSize >= 8)
-			{
-				//if masksize>=8, we can check 64 bits of key from the map first
-				for (u64 i = 0; i < mSenderSize; ++i)
+				ByteStream recvBuff;
+				chl.recv(recvBuff);
+				// double check the size. 
+				if (recvBuff.size() != mSenderSize* maskSize)
 				{
-					auto& msk = *(u64*)(theirMasks);
-
-					// check 64 first bits
-					auto match = localMasks[buffIdx].find(msk);
-
-					//if match, check for whole bits
-					if (match != localMasks[buffIdx].end())
-					{
-						if (memcmp(theirMasks, &match->second.first, maskSize) == 0) // check full mask
-						{
-							mIntersection.push_back(match->second.second);
-							//Log::out << "#id: " << match->second.second << Log::endl;
-						}
-					}
-					theirMasks += maskSize;
+					Log::out << "recvBuff.size() != expectedSize" << Log::endl;
+					throw std::runtime_error("rt error at " LOCATION);
 				}
-			}
-			else
-			{
-				for (u64 i = 0; i < mSenderSize; ++i)
+
+				auto theirMasks = recvBuff.data();
+
+				//loop each mask
+				if (maskSize >= 8)
 				{
-					for (auto match = localMasks[buffIdx].begin(); match != localMasks[buffIdx].end(); ++match)
+					//if masksize>=8, we can check 64 bits of key from the map first
+					for (u64 i = 0; i < mSenderSize; ++i)
 					{
-						if (memcmp(theirMasks, &match->second.first, maskSize) == 0) // check full mask
+						auto& msk = *(u64*)(theirMasks);
+
+						// check 64 first bits
+						auto match = localMasks[buffIdx].find(msk);
+
+						//if match, check for whole bits
+						if (match != localMasks[buffIdx].end())
 						{
-							mIntersection.push_back(match->second.second);
-							//Log::out << "#id: " << match->second.second << Log::endl;
+							if (memcmp(theirMasks, &match->second.first, maskSize) == 0) // check full mask
+							{
+								mIntersection[k].push_back(match->second.second);
+								//Log::out << "#id: " << match->second.second << Log::endl;
+							}
 						}
+						theirMasks += maskSize;
 					}
-					theirMasks += maskSize;
+				}
+				else
+				{
+					for (u64 i = 0; i < mSenderSize; ++i)
+					{
+						for (auto match = localMasks[buffIdx].begin(); match != localMasks[buffIdx].end(); ++match)
+						{
+							if (memcmp(theirMasks, &match->second.first, maskSize) == 0) // check full mask
+							{
+								mIntersection[k].push_back(match->second.second);
+								//Log::out << "#id: " << match->second.second << Log::endl;
+							}
+						}
+						theirMasks += maskSize;
+					}
 				}
 			}
 		}
@@ -341,37 +334,40 @@ namespace bOPRF
 		gTimer.setTimePoint("R Online.sendStashMask done");
 
 		//receive masks from the stash
-		for (u64 sBuffIdx = 0; sBuffIdx < mNumStash; sBuffIdx++)
+		for (int k = 0; k < senderes; ++k)
 		{
-			ByteStream recvBuff;
-			chl.recv(recvBuff);
-			if (mBins.mStash[sBuffIdx].isEmpty()== false)
+			for (u64 sBuffIdx = 0; sBuffIdx < mNumStash; sBuffIdx++)
 			{
-				// double check the size.
-				auto cntMask = mSenderSize;
-				gTimer.setTimePoint("Online.MaskReceived from STASH");
-				if (recvBuff.size() != cntMask* maskSize)
+				ByteStream recvBuff;
+				chl.recv(recvBuff);
+				if (mBins.mStash[sBuffIdx].isEmpty()== false)
 				{
-					Log::out << "recvBuff.size() != expectedSize" << Log::endl;
-					throw std::runtime_error("rt error at " LOCATION);
-				}
+					// double check the size.
+					auto cntMask = mSenderSize;
+					gTimer.setTimePoint("Online.MaskReceived from STASH");
+					if (recvBuff.size() != cntMask* maskSize)
+					{
+						Log::out << "recvBuff.size() != expectedSize" << Log::endl;
+						throw std::runtime_error("rt error at " LOCATION);
+					}
 
-				auto theirMasks = recvBuff.data();
+					auto theirMasks = recvBuff.data();
 					for (u64 i = 0; i < cntMask; ++i)
 					{
 						//check stash
 							if (memcmp(theirMasks, locaStashlMasks->data()+ sBuffIdx*maskSize, maskSize) == 0) 
 							{
-								mIntersection.push_back(mBins.mStash[sBuffIdx].mIdx);
+								mIntersection[k].push_back(mBins.mStash[sBuffIdx].mIdx);
 								//Log::out << "#id: " << match->second.second << Log::endl;
 							}
 						
 						theirMasks += maskSize;
-					}				
+					}			
+				}
 			}
 		}
 
-	gTimer.setTimePoint("Online.Done");
-	//	Log::out << gTimer << Log::endl;
-}
+		gTimer.setTimePoint("Online.Done");
+		//	Log::out << gTimer << Log::endl;
+	}
 }
