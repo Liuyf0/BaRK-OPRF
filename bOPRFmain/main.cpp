@@ -55,7 +55,6 @@ void BopSender(string ipAddressPort, int senderSize, int recverSize, int sendere
     } else {
         std::cerr << "Error opening directory." << std::endl;
     }
-
 	u64 psiSecParam = 40;
 
 	u64 offlineTimeTot(0);
@@ -79,7 +78,6 @@ void BopSender(string ipAddressPort, int senderSize, int recverSize, int sendere
 	sendPSIs.init(senderSize, recverSize, psiSecParam, *sendChls[0], OTSender0, OneBlock, mBins);
 
 	sendPSIs.sendInput(sendSets, sendChls, mBins);
-
 	u64 otIdx = 0;
 
 	for (u64 i = 0; i < numThreads; ++i)

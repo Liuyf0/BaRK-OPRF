@@ -160,7 +160,6 @@ namespace bOPRF
 					throw std::runtime_error("rt error at " LOCATION);
 
 				auto theirCorrOT = theirCorrOTMasksBuff.getArrayView<blockBop>();
-
 				// loop all the bins in this step.
 				for (u64 bIdx = stepIdx, j = 0; bIdx < stepEnd; ++bIdx, ++j)
 				{
@@ -198,7 +197,6 @@ namespace bOPRF
 			gTimer.setTimePoint("S Online.sendBucketMask done");
 		}
 		//======================STASH BIN==========================
-
 		//receive theirStashCorrOTMasksBuff
 		ByteStream theirStashCorrOTMasksBuff;	
 		chl.recv(theirStashCorrOTMasksBuff);	
@@ -226,7 +224,7 @@ namespace bOPRF
 
 				//compute mask
 				auto aesHashBuff = aesHashBuffs.at(k);
-				for (u64 i = 0; i < inputs.size(); ++i)
+				for (u64 i = 0; i < inputs[k].size(); ++i)
 				{
 					codeWord.elem[0] = aesHashBuff[0][i];
 					codeWord.elem[1] = aesHashBuff[1][i];
