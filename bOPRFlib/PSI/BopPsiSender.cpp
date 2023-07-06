@@ -117,7 +117,6 @@ namespace bOPRF
 		//======================Bucket BINs (not stash)==========================		
 		for (int k = 0; k < inputs.size(); ++k)
 		{
-			printf("inputs.size() = %d\n",inputs.size());
 			//u64 cntMask = mBins.mN;
 			std::unique_ptr<ByteStream> myMaskBuff1(new ByteStream());
 			std::unique_ptr<ByteStream> myMaskBuff2(new ByteStream());
@@ -201,8 +200,8 @@ namespace bOPRF
 		//======================STASH BIN==========================
 
 		//receive theirStashCorrOTMasksBuff
-		ByteStream theirStashCorrOTMasksBuff;					printf("ASD\n");	
-		chl.recv(theirStashCorrOTMasksBuff);					printf("CVXV\n");	
+		ByteStream theirStashCorrOTMasksBuff;	
+		chl.recv(theirStashCorrOTMasksBuff);	
 		auto theirStashCorrOT = theirStashCorrOTMasksBuff.getArrayView<blockBop>();
 		if (theirStashCorrOT.size() != mNumStash)
 			throw std::runtime_error("rt error at " LOCATION);
@@ -226,29 +225,20 @@ namespace bOPRF
 				std::shuffle(stashPermute.begin(), stashPermute.end(), prng);
 
 				//compute mask
-				printf("aesHashBuffs.size() = %d\n", aesHashBuffs.size());
 				auto aesHashBuff = aesHashBuffs.at(k);
-				printf("FDDFSd\n");
 				for (u64 i = 0; i < inputs.size(); ++i)
 				{
-					printf("13231d\n");
 					codeWord.elem[0] = aesHashBuff[0][i];
-					printf("132395as894sda94d1d\n");
 					codeWord.elem[1] = aesHashBuff[1][i];
 					codeWord.elem[2] = aesHashBuff[2][i];
 					codeWord.elem[3] = aesHashBuff[3][i];
-					printf("132as94dsa9814dfsa9f1sa9f1as9f1sa9f1a9sw1f9as1f9s131d\n");
 					codeWord = mPsiRecvSSOtMessages[otIdx] ^ ((theirStashCorrOT[stashIdx] ^ codeWord) & blk448Choice);
-					printf("13891d\n");
 					sha1.Reset();
 					sha1.Update((u8*)&codeWord, codeWordSize);
 					sha1.Final(hashBuff);
-					printf("qd\n");
 					// copy mask into the buffer in permuted pos
 					memcpy(myStashMasksBuff->data() + stashPermute[idxStashDone++] * maskSize, hashBuff, maskSize);
-					printf("dsf1d\n");
 				}
-				printf("as33121212\n");
 				chl.asyncSend(std::move(myStashMasksBuff));
 			}
 		}

@@ -15,10 +15,7 @@ using namespace bOPRF;
 
 void BopSender(string ipAddressPort, int senderSize, int recverSize, int senderes)
 {
-	std::cout << "BopSender()" << std::endl;
 	u64 numThreads = 1;
-
-	std::cout << "role  = sender (" << numThreads << ") SSOtPSI" << std::endl;
 
 	std::string name("psi");
 
@@ -97,8 +94,6 @@ void BopSender(string ipAddressPort, int senderSize, int recverSize, int sendere
 
 void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 {
-	std::cout << "BopRecv()" << std::endl;
-
 	u64 numThreads = 1;
 
 	std::fstream total;
@@ -113,9 +108,6 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 	std::vector<Channel*> recvChls(numThreads);
 	for (u64 i = 0; i < numThreads; ++i)
 		recvChls[i] = &ep1.addChannel(name + std::to_string(i), name + std::to_string(i));
-
-	std::cout << "role  = recv (" << numThreads << ") SSOtPSI" << std::endl;
-	std::cout << "--------------------------\n";
 
 	std::vector<block> recvSet;
 	// we will use this to hash large inputs
@@ -135,8 +127,6 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 
 	u64 offlineTimeTot(0);
 	u64 onlineTimeTot(0);
-
-	std::cout << "setSize" << "\t\t\t\t|  " << "offline(ms)" << "  |  " << "online(ms)" << std::endl;
 
 	SSOtExtReceiver OTRecver0;
 	BopPsiReceiver recvPSIs;
@@ -160,15 +150,9 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 	offlineTimeTot += offlineTime;
 	onlineTimeTot += online;
 
-	std::cout << recverSize << " vs " << senderSize << "\t\t\t\t" << offlineTime << "\t\t" << online << std::endl;
 	std::cout << recverSize << " vs " << senderSize << "-- Online Avg Time: " << onlineTimeTot << " ms " << "\n";
 	std::cout << recverSize << " vs " << senderSize << "-- Offline Avg Time: " << offlineTimeTot << " ms " << "\n";
 	std::cout << recverSize << " vs " << senderSize << "-- Total Avg Time: " << (offlineTimeTot + onlineTimeTot) << " ms " << "\n";
-	std::cout << "--------------------------\n";
-	total << recverSize << " vs " << senderSize << "-- Online Avg Time: " << onlineTimeTot << " ms " << "\n";
-	total << recverSize << " vs " << senderSize << "-- Offline Avg Time: " << offlineTimeTot << " ms " << "\n";
-	total << recverSize << " vs " << senderSize << "-- Total Avg Time: " << (offlineTimeTot + onlineTimeTot) << " ms " << "\n";
-	total << "--------------------------\n";
 
 	for (u64 i = 0; i < numThreads; ++i)
 	{
