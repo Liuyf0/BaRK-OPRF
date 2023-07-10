@@ -1,0 +1,306 @@
+Grid Size: 1	worker Number: 2000	Total Time: 21627 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 2000	Total Time: 21603 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 2000	Total Time: 21670 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 2000	Total Time: 21791 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 2000	Total Time: 21646 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1	worker Number: 4000	Total Time: 43822 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 4000	Total Time: 43193 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 4000	Total Time: 43478 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 4000	Total Time: 43388 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 4000	Total Time: 42982 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1	worker Number: 6000	Total Time: 65430 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 6000	Total Time: 66195 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 6000	Total Time: 66499 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 6000	Total Time: 66974 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 6000	Total Time: 74726 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1	worker Number: 8000	Total Time: 89089 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 8000	Total Time: 86620 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 8000	Total Time: 92501 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 8000	Total Time: 88880 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 8000	Total Time: 88984 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1	worker Number: 10000	Total Time: 110032 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 10000	Total Time: 110469 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 10000	Total Time: 118005 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 10000	Total Time: 113794 ms 
+----------------------------------------
+Grid Size: 1	worker Number: 10000	Total Time: 111938 ms 
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Grid Size: 10	worker Number: 2000	Total Time: 21336 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 2000	Total Time: 21098 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 2000	Total Time: 20293 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 2000	Total Time: 20682 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 2000	Total Time: 21031 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 10	worker Number: 4000	Total Time: 40296 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 4000	Total Time: 40957 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 4000	Total Time: 42807 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 4000	Total Time: 43568 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 4000	Total Time: 44072 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 10	worker Number: 6000	Total Time: 67079 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 6000	Total Time: 61142 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 6000	Total Time: 58785 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 6000	Total Time: 59078 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 6000	Total Time: 58782 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 10	worker Number: 8000	Total Time: 82216 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 8000	Total Time: 86211 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 8000	Total Time: 85852 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 8000	Total Time: 85000 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 8000	Total Time: 85197 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 10	worker Number: 10000	Total Time: 106763 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 10000	Total Time: 108020 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 10000	Total Time: 108241 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 10000	Total Time: 98997 ms 
+----------------------------------------
+Grid Size: 10	worker Number: 10000	Total Time: 100154 ms 
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Grid Size: 100	worker Number: 2000	Total Time: 21224 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 2000	Total Time: 21410 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 2000	Total Time: 21797 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 2000	Total Time: 22136 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 2000	Total Time: 21359 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 100	worker Number: 4000	Total Time: 41030 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 4000	Total Time: 41908 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 4000	Total Time: 41667 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 4000	Total Time: 40701 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 4000	Total Time: 40932 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 100	worker Number: 6000	Total Time: 61425 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 6000	Total Time: 61988 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 6000	Total Time: 61788 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 6000	Total Time: 62136 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 6000	Total Time: 61407 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 100	worker Number: 8000	Total Time: 81645 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 8000	Total Time: 80716 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 8000	Total Time: 78789 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 8000	Total Time: 78950 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 8000	Total Time: 79251 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 100	worker Number: 10000	Total Time: 98986 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 10000	Total Time: 99658 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 10000	Total Time: 98141 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 10000	Total Time: 98644 ms 
+----------------------------------------
+Grid Size: 100	worker Number: 10000	Total Time: 97541 ms 
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Grid Size: 1000	worker Number: 2000	Total Time: 25613 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 2000	Total Time: 25926 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 2000	Total Time: 24543 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 2000	Total Time: 24971 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 2000	Total Time: 24863 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1000	worker Number: 4000	Total Time: 53504 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 4000	Total Time: 49549 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 4000	Total Time: 49217 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 4000	Total Time: 49734 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 4000	Total Time: 50198 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1000	worker Number: 6000	Total Time: 77169 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 6000	Total Time: 74351 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 6000	Total Time: 73835 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 6000	Total Time: 73586 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 6000	Total Time: 73619 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1000	worker Number: 8000	Total Time: 102782 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 8000	Total Time: 98567 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 8000	Total Time: 97776 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 8000	Total Time: 98303 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 8000	Total Time: 98041 ms 
+----------------------------------------
+----------------------------------------
+Grid Size: 1000	worker Number: 10000	Total Time: 126329 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 10000	Total Time: 123720 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 10000	Total Time: 124076 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 10000	Total Time: 121286 ms 
+----------------------------------------
+Grid Size: 1000	worker Number: 10000	Total Time: 124885 ms 
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Grid Size: 10000	worker Number: 2000	Total Time: 65906 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 2000	Total Time: 42131 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 2000	Total Time: 34684 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 2000	Total Time: 34575 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 2000	Total Time: 34249 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 1	Total Time: 482 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 2000	Total Time: 65013 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 200	Total Time: 9897 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 200	Total Time: 3829 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 200	Total Time: 3647 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 200	Total Time: 3670 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 200	Total Time: 3630 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 400	Total Time: 11277 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 400	Total Time: 6928 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 400	Total Time: 6946 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 400	Total Time: 6709 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 400	Total Time: 6666 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 600	Total Time: 13866 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 600	Total Time: 9916 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 600	Total Time: 9809 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 600	Total Time: 10032 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 600	Total Time: 9801 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 800	Total Time: 18768 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 800	Total Time: 16010 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 800	Total Time: 13185 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 800	Total Time: 12989 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 800	Total Time: 13513 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 1000	Total Time: 20679 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 1000	Total Time: 15902 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 1000	Total Time: 16586 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 1000	Total Time: 16325 ms 
+----------------------------------------
+Grid Size: 10000	worker Number: 1000	Total Time: 17118 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 1	Total Time: 2526 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 20	Total Time: 62597 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 20	Total Time: 48845 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 20	Total Time: 42934 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 20	Total Time: 50261 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 20	Total Time: 48494 ms 
+----------------------------------------
+Grid Size: 1000000	worker Number: 2	Total Time: 12841 ms 
+----------------------------------------

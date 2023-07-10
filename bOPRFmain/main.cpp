@@ -66,15 +66,13 @@ void BopSender(string ipAddressPort, int senderSize, int recverSize, int sendere
 
 	//SimpleHasher mBins;
     SimpleHasher *mBins = new SimpleHasher[senderes];
-
-	for (int i = 0; i < senderes; ++i) mBins[i].init(recverSize, senderSize);
-
 	u8 dumm[1];
 	sendChls[0]->asyncSend(dumm, 1);
 	sendChls[0]->recv(dumm, 1);
 	sendChls[0]->asyncSend(dumm, 1);
 
 	gTimer.reset();
+	for (int i = 0; i < senderes; ++i) {mBins[i].init(recverSize, senderSize);}
 	sendPSIs.init(senderSize, recverSize, psiSecParam, *sendChls[0], OTSender0, OneBlock, mBins);
 
 	sendPSIs.sendInput(sendSets, sendChls, mBins);
@@ -117,9 +115,7 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 		size_t hashVal = szHash(buffer);
 		recvSet.push_back(_mm_set_epi32(hashVal,hashVal,hashVal,hashVal));
 	}
-
 	u64 psiSecParam = 40;
-
 	u64 offlineTimeTot(0);
 	u64 onlineTimeTot(0);
 
@@ -151,9 +147,8 @@ void BopRecv(string ipAddressPort, int senderSize, int recverSize, int senderes)
 
 	std::string outpath = "./output.txt";
     std::ofstream outputFile(outpath, std::ios::app);
-    outputFile << "Online Avg Time: " << onlineTimeTot << " ms " << std::endl;
-    outputFile << "Offline Avg Time: "<< offlineTimeTot << " ms " << std::endl;
-	outputFile << "Total Avg Time: "<< (offlineTimeTot + onlineTimeTot) << " ms " << std::endl;
+	outputFile << "Grid Size: " << senderSize << "\tworker Number: " << senderes;
+	outputFile << "\tTotal Time: "<< (offlineTimeTot + onlineTimeTot) << " ms " << std::endl;
 	outputFile << "----------------------------------------" << std::endl;
     outputFile.close();
 
